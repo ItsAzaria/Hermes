@@ -1,44 +1,56 @@
-<p align="center">
-    <img title="Laracord" height="100" src="https://raw.githubusercontent.com/laracord/laracord.com/main/public/images/logo-full-dark.png" alt="Laracord Logo" />
-</p>
 
-<p align="center">
-  <a href="https://github.com/laracord/framework/actions"><img src="https://img.shields.io/github/actions/workflow/status/laracord/framework/main.yml?branch=main&style=flat-square" alt="Build Status" /></a>
-  <a href="https://packagist.org/packages/laracord/framework"><img src="https://img.shields.io/packagist/dt/laracord/framework.svg?style=flat-square" alt="Total Downloads" /></a>
-  <a href="https://packagist.org/packages/laracord/framework"><img src="https://img.shields.io/packagist/v/laracord/framework.svg?label=framework&style=flat-square" alt="Latest Stable Version" /></a>
-  <a href="https://packagist.org/packages/laracord/framework"><img src="https://img.shields.io/packagist/l/laracord/framework.svg?style=flat-square" alt="License" /></a>
-</p>
+# Polly
 
-Laracord is a [micro-framework](https://github.com/laracord/framework) providing a powerful starting point for your next [Discord](https://discord.com/developers/docs/intro) bot.
-
-Quickly build functional, elegant bots using [Laravel](https://laravel.com/) alongside [DiscordPHP](https://github.com/discord-php/DiscordPHP).
-
-![Screenshot](https://raw.githubusercontent.com/laracord/laracord.com/main/public/images/laracord-cli.png)
+Polly is a Discord bot built with Laracord for managing emotes, logging reactions, and tracking user statistics.
 
 ## Features
 
-- ⚡️ Out of the box support for databases, caching, and many other Laravel features thanks to [Laravel Zero](https://laravel-zero.com/).
-- 🚀 Instantly generate working bot [commands](https://laracord.com/docs/commands) and [event listeners](https://laracord.com/docs/events) with 0 knowledge.
-- 🧑‍💻 Automatic handling of registering/updating/unregistering application [slash commands](https://laracord.com/docs/slash-commands).
-- 🚚 Easy to use [interaction routing](https://laracord.com/docs/interactions) for persistence on message buttons and actions.
-- 👷 Generate asynchronous [services/tasks](https://laracord.com/docs/services) that run parallel to the bot.
-- 🌎 Optional [HTTP Server](https://laracord.com/docs/http-server) with native Laravel routing and [Livewire support](https://laracord.com/docs/livewire).
-- 🔧 Fully configurable and extendable.
-- 💄 Beautiful console logging with timestamps.
-- 🔍️ Fully [documented](https://laracord.com) and maintained.
+- Emote management and logging
+- Reaction tracking and statistics
+- User and guild stats
+- Optional moderation logging
 
-## Documentation
+## Slash Commands
 
-For full documentation, visit [Laracord.com](https://laracord.com).
+Polly provides several slash commands for managing emotes and stats. Example commands:
 
-## Bug Reports
+- `/emote add <name> <image>` — Add a new emote
+- `/emote stats <name>` — View emote usage stats
+- `/user stats <user>` — View user stats
+- `/guild stats` — View guild stats
 
-If you discover a bug in Laracord, please [open an issue](https://github.com/laracord/framework/issues).
+## Getting Started
 
-## Contributing
+1. Install dependencies:
+	```bash
+	composer install
+	```
+2. Configure environment:
+	- Copy `.env.example` to `.env`
+	- Set at minimum:
+	  - `DISCORD_TOKEN=your_bot_token_here`
+	  - `APP_NAME=Polly`
+	  - `APP_ENV=development`
+3. Run migrations:
+	```bash
+	php laracord migrate
+	```
+4. Start the bot:
+	```bash
+	php laracord bot:boot
+	```
 
-Contributing whether it be through PRs, reporting an issue, or suggesting an idea is encouraged and appreciated.
+## Dev
+
+Run CI checks locally:
+```bash
+composer ci
+```
+Format with Pint:
+```bash
+vendor/bin/pint
+```
 
 ## License
 
-Laracord is provided under the [MIT License](LICENSE.md).
+This project is licensed under the MIT License. See LICENSE.md.
