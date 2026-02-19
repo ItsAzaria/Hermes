@@ -1,23 +1,12 @@
 
 # Hermes
 
-Hermes is a Discord bot built with Laracord for managing emotes, logging reactions, and tracking user statistics.
+Hermes is a Discord bot built with Laracord for logging reactions, and tracking user statistics.
 
 ## Features
 
-- Emote management and logging
 - Reaction tracking and statistics
 - User and guild stats
-- Optional moderation logging
-
-## Slash Commands
-
-Hermes provides several slash commands for managing emotes and stats. Example commands:
-
-- `/emote add <name> <image>` — Add a new emote
-- `/emote stats <name>` — View emote usage stats
-- `/user stats <user>` — View user stats
-- `/guild stats` — View guild stats
 
 ## Getting Started
 
