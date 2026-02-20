@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Http\Controllers\HomepageController;
 use Illuminate\Support\Facades\Route;
 use Laracord\Laracord;
 
@@ -12,15 +13,6 @@ class Bot extends Laracord
      */
     public function routes(): void
     {
-        Route::middleware('web')->group(function () {
-            // Route::get('/', fn () => 'Hello world!');
-        });
-
-        Route::middleware('api')->group(function () {
-            // Route::get('/commands', fn () => collect($this->registeredCommands)->map(fn ($command) => [
-            //     'signature' => $command->getSignature(),
-            //     'description' => $command->getDescription(),
-            // ]));
-        });
+        Route::get('/', HomepageController::class);
     }
 }
