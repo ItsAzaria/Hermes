@@ -1,9 +1,18 @@
 services:
-  mimic:
+  hermes:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: mimic
+    container_name: hermes
     restart: unless-stopped
     volumes:
-      - ./.env:/app/.env:ro
+      - ./.env:/app/.env
+    networks:
+      - db-network
+      - web
+
+networks:
+  db-network:
+    external: true
+  web:
+    external: true

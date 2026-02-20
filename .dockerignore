@@ -1,0 +1,21 @@
+# Git
+.git
+.gitignore
+.github
+
+# Local environment and editor files
+.env
+.env.*
+.vscode
+.idea
+
+# Build and runtime artifacts
+vendor
+builds
+.laracord
+storage/logs
+*.sqlite
+
+# OS noise
+.DS_Store
+Thumbs.db
