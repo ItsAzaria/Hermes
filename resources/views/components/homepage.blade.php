@@ -119,8 +119,12 @@
           @forelse (($stats['top_movers'] ?? collect()) as $emote)
             <div class="flex items-center justify-between px-4 py-3.5 border-b border-[#3f4147] last:border-b-0">
               <div class="flex items-center gap-3">
-                <img src="{{ $emoteImageSrc($emote->image) }}" alt="{{ $emote->emote_name }}" class="object-cover w-9 h-9 border rounded border-[#3f4147]" />
-                <span class="font-medium text-[#dbdee1]">{{ $emote->emote_name }}</span>
+                @if (($emote->type ?? null) === 'UNICODE')
+                  <span class="font-medium text-[#dbdee1]">{{ $emote->emote_name }}</span>
+                @else
+                  <img src="{{ $emoteImageSrc($emote->image) }}" alt="{{ $emote->emote_name }}" class="object-cover w-9 h-9 border rounded border-[#3f4147]" />
+                  <span class="font-medium text-[#dbdee1]">{{ $emote->emote_name }}</span>
+                @endif
               </div>
               <div class="text-right">
                 <p class="text-sm text-[#b5bac1]">{{ $emote->previous_count }} → {{ $emote->current_count }}</p>
