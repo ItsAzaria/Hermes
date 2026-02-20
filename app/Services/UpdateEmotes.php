@@ -9,7 +9,7 @@ class UpdateEmotes extends Service
     /**
      * The service interval.
      */
-    protected int $interval = 5;
+    protected int $interval = 600; // 10 minutes
 
     /**
      * Handle the service.
