@@ -103,7 +103,7 @@ class Emote extends Model
                     ->decrement('usage_count');
             }
 
-            UserGuildStat::where(['user_id' => $user->discord_id, 'guild_id' => $guildId])
+            UserGuildStat::where(['emote_id' => $this->emote_id, 'user_id' => $user->discord_id, 'guild_id' => $guildId])
                 ->decrement('usage_count');
         }
     }
